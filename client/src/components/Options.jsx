@@ -57,8 +57,10 @@ const Options = ( { children } ) => {
                            </Typography>
                            <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth/>
                            <CopyToClipboard text={me} className={classes.margin}>
-                               <Button variant="contained" color="primary" fullWidth startIcon={<Assignment fontSize="large"/>}/>
-
+                               <Button variant="contained" color="primary" fullWidth startIcon={<Assignment fontSize="large"/>}>
+                                   Copy to Clipboard
+                                   </Button>
+                                
                            </CopyToClipboard>
                        </Grid>
                        <Grid item xs={12} md={6} className={classes.padding}>
@@ -78,7 +80,7 @@ const Options = ( { children } ) => {
                            ) : (
                             <Button
                             variant="contained" 
-                            color="secondary" 
+                            color="primary" 
                             startIcon={<Phone fontSize="large"/>}
                             fullWidth
                             onClick={() => callUser(idToCall)}
@@ -89,9 +91,10 @@ const Options = ( { children } ) => {
                        </Grid>
                    </Grid>
                </form>
+               {children}
            </Paper>
-            Options
-            {children}
+            
+            
        </Container>
            
         
